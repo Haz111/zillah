@@ -37,18 +37,6 @@
 
 						<div class="main-navigation-wrap-inner<?php echo wp_nav_menu( array( 'theme_location' => 'social', 'fallback_cb' => false, 'echo' => false ) ) !== false ? '' : ' no-social-menu'; ?>">
 
-							<?php
-								wp_nav_menu( array(
-									'theme_location' => 'social',
-									'menu_id' => 'social-icons-menu',
-									'menu_class' => 'social-navigation',
-									'link_before' => '<span class="screen-reader-text">',
-									'link_after' => '</span>',
-									'container_class' => 'header-social-icons',
-									'fallback_cb' => false,
-								) );
-							?>
-
 							<nav id="site-navigation" class="main-navigation" role="navigation">
 								<?php
 									wp_nav_menu(
@@ -62,10 +50,6 @@
 
 							<div class="menu-toggle-button-wrap">
 								<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><i class="fa fa-bars"></i></button>
-							</div>
-
-							<div class="header-search">
-								<?php get_search_form(); ?>
 							</div>
 
 						</div>
