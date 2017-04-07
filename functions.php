@@ -181,8 +181,19 @@ function zillah_fonts_url() {
 	 */
 	$merriweather = _x( 'on', 'Merriweather font: on or off', 'zillah' );
 
-	if ( 'off' !== $bitter || 'off' !== $lato || 'off' !== $merriweather ) {
+	/*
+	 Translators: If there are characters in your language that are not
+	 * supported by Bitter, translate this to 'off'. Do not translate into your
+	 * own language.
+	 */
+	$tinos = _x( 'on', 'Tinos font: on or off', 'zillah' );
+
+	if ( 'off' !== $bitter || 'off' !== $lato || 'off' !== $merriweather || 'off' !== $tinos ) {
 		$font_families = array();
+
+		if ( 'off' !== $tinos ) {
+			$font_families[] = 'Tinos:400,300';
+		}
 
 		if ( 'off' !== $merriweather ) {
 			$font_families[] = 'Merriweather:400,300';

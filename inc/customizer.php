@@ -161,6 +161,11 @@ function zillah_customize_register( $wp_customize ) {
 		'priority' => 4,
 		'ti_google_fonts' => array(
 			array(
+				'font_family' => 'Tinos',
+				'type' => 'serif',
+				'subset' => '400',
+			),
+			array(
 				'font_family' => 'Merriweather',
 				'type' => 'serif',
 				'subset' => '400',
