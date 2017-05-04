@@ -89,11 +89,11 @@
 			var result = '';
 
 			var lastIcon = $( '.social-media-icons li:last-child' );
-			
+
 			obj.forEach(function(item) {
 				result+=  '<li><a href="' + item.link + '" class="social-icon"><i class="fa ' + item.icon_value + '"></i></a></li>';
 			});
-			
+
 			if ( ! lastIcon.hasClass('zillah-only-customizer') ){
 				result+= '<li><button type="button" class="search-opt search-toggle"><i class="fa fa-search"></i></button><div class="header-search"></div></li>';
 			} else {

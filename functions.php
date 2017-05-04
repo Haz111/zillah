@@ -393,6 +393,52 @@ function zillah_brand() {
 	echo '</div>';
 }
 
+/**
+ * Return the category name and description
+ *
+ * @since Zillah-HAZ 1.1.1.5
+ */
+function zillah_header_archive_background_image() {
+	if (function_exists('z_taxonomy_image_url')) {
+		$zillah_background_image = z_taxonomy_image_url();
+
+		if (!empty($zillah_background_image)) {
+			echo "style=\"background-image:url(" . $zillah_background_image . ");\"";
+		}
+	}
+}
+
+/**
+ * Return the category name and description
+ *
+ * @since Zillah-HAZ 1.1.1.5
+ */
+function zillah_header_archive_brand() {
+
+	echo '<div class="header-logo-wrap">';
+
+	$zillah_tagline_hide  = get_theme_mod( 'zillah_tagline_show', false );
+	$zillah_header_archive_text_color = '';
+
+	if (function_exists('z_taxonomy_color') && function_exists('z_taxonomy_image_url') && !empty(z_taxonomy_image_url())) {
+		$zillah_header_archive_text_color = 'style="color: ' . z_taxonomy_color() . '"';
+	}
+
+	if ( ( ! $zillah_tagline_hide && display_header_text() ) || is_customize_preview() ) {
+		echo '<div class="header-title-wrap' . ( ($zillah_tagline_hide || ! display_header_text() ) && is_customize_preview() ? ' zillah-only-customizer' : '' ) . '">';
+		the_archive_title( '<h1 class="site-title"> <a '. $zillah_header_archive_text_color . '>', '</a></h1>' );
+		echo '</div>';
+	}
+
+		$description = the_archive_description( '<div class="taxonomy-description">', '</div>' );;
+	if ( ( $description && display_header_text() ) || is_customize_preview() ) : ?>
+			<p class="site-description<?php echo ! display_header_text() && is_customize_preview() ? ' zillah-only-customizer' : ''; ?>"><?php echo $description; /* WPCS: xss ok. */ ?></p>
+			<?php
+		endif;
+
+	echo '</div>';
+}
+
 
 /**
  * Display social icons

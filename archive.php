@@ -9,17 +9,10 @@
 
 $zillah_sidebar_show = get_theme_mod( 'zillah_sidebar_show', false );
 
-get_header(); ?>
+get_header( 'archive' ); ?>
 
 	</div><!-- .container -->
 	<?php zillah_hook_archive_before(); ?>
-
-	<header class="page-header">
-		<div class="container">
-			<?php the_archive_title( '<h1 class="page-title">', '</h1>' ); ?>
-			<?php the_archive_description( '<div class="taxonomy-description">', '</div>' ); ?>
-		</div>
-	</header><!-- .page-header -->
 
 	<div class="container">
 
@@ -68,4 +61,3 @@ get_header(); ?>
 	<?php zillah_hook_archive_after(); ?>
 <?php
 get_footer();
-

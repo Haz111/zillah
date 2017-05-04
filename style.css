@@ -4,7 +4,7 @@ Theme URI:      https://themeisle.com/themes/zillah/
 Author:         ThemeIsle, modified by haz111
 Author URI:     http://themeisle.com
 Description:    Zillah modified by haz111
-Version:        1.1.1.5
+Version:        1.1.1.6
 License:        GNU General Public License v2 or later
 License URI:    http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain:    zillah-haz
@@ -2222,7 +2222,7 @@ object {
     line-height: 1;
     color: #373735;
     letter-spacing: 5px;
-    text-transform: uppercase;
+    text-transform: lowercase;
     font-weight: 900;
     margin: 25px 0;
     display: inline-block;
